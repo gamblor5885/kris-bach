@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kris's Bachelor Party — Black Hawk, CO</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #07090a;
+      --surface: #0f1410;
+      --surface2: #172118;
+      --surface3: #1f2d20;
+      --green: #1e6b38;
+      --green-light: #2a9a50;
+      --green-dim: #12381c;
+      --gold: #c9a227;
+      --gold-light: #f0c84a;
+      --gold-dim: #6a4f0a;
+      --red: #b03020;
+      --text: #e2dcc8;
+      --text-muted: #78705e;
+      --text-dim: #42403a;
+      --border: #1e2820;
+      --border-gold: #523a08;
+      --radius: 10px;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-mono: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      /* Subtle crosshatch felt pattern */
+      background-image:
+        repeating-linear-gradient(0deg,   transparent, transparent 24px, rgba(30,107,56,0.035) 24px, rgba(30,107,56,0.035) 25px),
+        repeating-linear-gradient(90deg,  transparent, transparent 24px, rgba(30,107,56,0.035) 24px, rgba(30,107,56,0.035) 25px);
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      text-align: center;
+      padding: 3.5rem 1rem 4rem;
+      background: linear-gradient(180deg, #091209 0%, #07090a 100%);
+      border-bottom: 1px solid var(--border-gold);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Radial green glow */
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 90% 70% at 50% -5%, rgba(26,90,48,0.3), transparent);
+      pointer-events: none;
+    }
+    /* Star field */
+    header::after {
+      content: '· · ✦ · · · ✦ · · ✦ · · · ✦ · ·';
+      position: absolute;
+      top: 1rem;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.12);
+      letter-spacing: 0.6rem;
+      pointer-events: none;
+    }
+    .header-suits {
+      font-size: 1.2rem;
+      letter-spacing: 0.7rem;
+      color: var(--gold);
+      margin-bottom: 1.1rem;
+      opacity: 0.75;
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      position: relative;
+      z-index: 1;
+    }
+    header h1 .name {
+      color: var(--gold-light);
+      text-shadow: 0 0 60px rgba(201,162,39,0.55), 0 0 20px rgba(201,162,39,0.25), 0 2px 6px rgba(0,0,0,0.9);
+    }
+    header h1 .rest { color: #cfc9b8; font-weight: 300; }
+    .header-meta {
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    .header-tagline {
+      margin-top: 0.5rem;
+      font-size: 0.98rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--green-light);
+      opacity: 0.85;
+      position: relative;
+      z-index: 1;
+    }
+    /* Mountain silhouette — two layered ranges */
+    .mountain-wrap {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 58px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .mountain-wrap svg { width: 100%; height: 100%; display: block; }
+
+    /* ─── NAV ─── */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      padding: 1.1rem 1rem;
+      background: rgba(7, 9, 10, 0.97);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+    }
+    nav button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.18s;
+      font-family: var(--font);
+      letter-spacing: 0.02em;
+    }
+    nav button:hover { border-color: var(--gold-dim); color: var(--gold); }
+    nav button.active { background: var(--green-dim); border-color: var(--green); color: #c0deb8; }
+
+    /* ─── MAIN ─── */
+    main { max-width: 880px; margin: 0 auto; padding: 2rem 1rem 5rem; }
+    .tab-panel { display: none; animation: fadeIn 0.2s ease; }
+    .tab-panel.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── DAY CARDS ─── */
+    .day-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+      transition: box-shadow 0.18s;
+    }
+    .day-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.85rem 1.3rem;
+      background: linear-gradient(135deg, var(--surface2) 0%, #1a2819 100%);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .day-header:hover .day-hdr-actions { opacity: 1; }
+
+    .day-badge {
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      color: #9dd898;
+      padding: 0.26rem 0.7rem;
+      border-radius: 5px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      white-space: nowrap;
+      font-family: var(--font-mono);
+      flex-shrink: 0;
+    }
+    .day-title { font-size: 0.98rem; font-weight: 600; color: var(--gold-light); flex: 1; }
+    .day-sub   { font-size: 0.76rem; font-weight: 400; color: var(--text-muted); font-style: italic; display: none; }
+    @media (min-width: 480px) { .day-sub { display: block; } }
+
+    /* Suit watermark on each day header — cycles ♠ ♥ ♦ ♣ */
+    .day-suit {
+      font-size: 1.8rem;
+      line-height: 1;
+      opacity: 0.07;
+      pointer-events: none;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    /* Day header actions */
+    .day-hdr-actions {
+      display: flex;
+      gap: 0.2rem;
+      opacity: 0;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+
+    /* Day header edit form */
+    .day-edit-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      align-items: center;
+      padding: 0.8rem 1.3rem;
+      background: linear-gradient(135deg, var(--surface2) 0%, #1a2819 100%);
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .day-edit-badge { width: 115px; font-family: var(--font-mono); font-size: 0.77rem; flex-shrink: 0; }
+    .day-edit-title { flex: 2; min-width: 135px; font-weight: 600; }
+    .day-edit-sub   { flex: 2; min-width: 135px; }
+
+    /* ─── EVENTS ─── */
+    .day-events { padding: 0.25rem 1.3rem 0.4rem; }
+
+    .event-row {
+      display: flex;
+      gap: 0.85rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .event-row:last-of-type { border-bottom: none; }
+    .event-row:hover .ev-actions { opacity: 1; }
+
+    .event-time {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      width: 72px;
+      flex-shrink: 0;
+      padding-top: 2px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.03em;
+    }
+    .event-body { flex: 1; min-width: 0; }
+    .event-name {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+    .event-note {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 0.18rem;
+      font-style: italic;
+    }
+
+    .ev-actions {
+      display: flex;
+      gap: 0.18rem;
+      opacity: 0;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+      padding-top: 1px;
+    }
+
+    /* ─── ICON BUTTONS ─── */
+    .icon-btn {
+      background: none;
+      border: 1px solid transparent;
+      color: var(--text-dim);
+      cursor: pointer;
+      padding: 0.16rem 0.4rem;
+      border-radius: 5px;
+      font-size: 0.78rem;
+      transition: all 0.14s;
+      line-height: 1.5;
+      font-family: var(--font);
+    }
+    .icon-btn:hover { border-color: var(--border); color: var(--text-muted); background: var(--surface2); }
+    .icon-btn.edit:hover { border-color: var(--gold-dim); color: var(--gold); }
+    .icon-btn.del:hover  { border-color: #3a1212; color: #c05040; background: #140808; }
+
+    /* ─── EVENT EDIT FORM ─── */
+    .event-edit-form {
+      padding: 0.6rem 0 0.7rem;
+      border-bottom: 1px solid var(--border-gold);
+      display: flex;
+      flex-direction: column;
+      gap: 0.42rem;
+    }
+    .ev-edit-r1, .ev-edit-r2 { display: flex; gap: 0.42rem; flex-wrap: wrap; align-items: center; }
+    .ev-spacer  { width: 72px; flex-shrink: 0; }
+    .edit-time  { width: 86px; flex-shrink: 0; }
+    .edit-name  { flex: 3; min-width: 135px; }
+    .edit-tag   { flex: 1; min-width: 100px; }
+    .edit-note  { flex: 3; min-width: 135px; }
+
+    /* ─── SMALL BUTTONS ─── */
+    .btn-sm {
+      padding: 0.3rem 0.82rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: all 0.15s;
+      white-space: nowrap;
+      line-height: 1.5;
+    }
+    .btn-save   { background: var(--green-dim); border: 1px solid var(--green); color: #b8dab0; }
+    .btn-save:hover   { background: var(--green); color: #fff; }
+    .btn-cancel { background: transparent; border: 1px solid var(--border); color: var(--text-muted); }
+    .btn-cancel:hover { border-color: #3a1212; color: #c05040; }
+
+    /* Add event strip */
+    .add-event-strip { padding: 0.4rem 0 0.05rem; border-top: 1px dashed var(--border); margin-top: 0.3rem; }
+    .add-event-btn {
+      background: none; border: none;
+      color: var(--text-dim); cursor: pointer;
+      font-size: 0.78rem; font-weight: 500;
+      font-family: var(--font);
+      padding: 0.12rem 0; transition: color 0.15s;
+      letter-spacing: 0.03em;
+    }
+    .add-event-btn:hover { color: var(--gold); }
+
+    /* Add Day button */
+    .add-day-wrap { text-align: center; padding: 0.75rem 0 0.1rem; }
+    .add-day-btn {
+      background: transparent;
+      border: 1px dashed var(--border);
+      color: var(--text-dim);
+      padding: 0.55rem 2rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 500;
+      font-family: var(--font);
+      transition: all 0.18s;
+      letter-spacing: 0.04em;
+    }
+    .add-day-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* ─── TAGS ─── */
+    .etag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.1rem 0.48rem;
+      border-radius: 100px;
+      letter-spacing: 0.06em;
+      font-style: normal;
+      flex-shrink: 0;
+    }
+    .t-casino  { background: #280e0e; color: #d07060; border: 1px solid #481818; }
+    .t-outdoor { background: #0c1e0e; color: #70b870; border: 1px solid #183818; }
+    .t-food    { background: #241808; color: #c09050; border: 1px solid #483010; }
+    .t-travel  { background: #0c0c28; color: #7070c8; border: 1px solid #181848; }
+    .t-other   { background: #1a1a1a; color: #888; border: 1px solid #303030; }
+
+    /* ─── SHARED FORM ELEMENTS ─── */
+    .add-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.3rem;
+      margin-bottom: 1.4rem;
+    }
+    .add-form-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .form-row { display: flex; gap: 0.55rem; flex-wrap: wrap; }
+
+    input, textarea, select {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.52rem 0.8rem;
+      border-radius: 7px;
+      font-family: var(--font);
+      font-size: 0.86rem;
+      outline: none;
+      transition: border-color 0.18s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--gold-dim); }
+    input::placeholder, textarea::placeholder { color: var(--text-dim); }
+    select option { background: var(--surface2); }
+
+    .btn {
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      color: #b8dab0;
+      padding: 0.52rem 1.2rem;
+      border-radius: 7px;
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 0.86rem;
+      font-weight: 500;
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--green); color: #fff; }
+
+    /* ─── ACTIVITIES ─── */
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(252px, 1fr));
+      gap: 0.85rem;
+    }
+    .act-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.05rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    /* subtle card-back diagonal stripe on activity cards */
+    .act-card::before {
+      content: '';
+      position: absolute;
+      top: -10px; right: -10px;
+      width: 45px; height: 45px;
+      background: var(--green-dim);
+      transform: rotate(45deg);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .act-card:hover { border-color: var(--border-gold); box-shadow: 0 4px 16px rgba(0,0,0,0.45); }
+    .act-card:hover .act-del { opacity: 1; }
+    .act-del {
+      position: absolute; top: 0.5rem; right: 0.5rem;
+      background: none; border: none; color: var(--text-dim);
+      cursor: pointer; font-size: 0.82rem; opacity: 0;
+      transition: opacity 0.18s; padding: 0.2rem;
+      z-index: 1;
+    }
+    .act-del:hover { color: var(--red); }
+    .act-top { display: flex; gap: 0.7rem; align-items: flex-start; }
+    .act-icon { font-size: 1.55rem; line-height: 1; flex-shrink: 0; }
+    .act-name { font-size: 0.9rem; font-weight: 600; color: var(--text); line-height: 1.35; }
+    .act-desc { font-size: 0.78rem; font-weight: 400; color: var(--text-muted); line-height: 1.55; font-style: italic; }
+    .act-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+    .vote-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.28rem 0.78rem;
+      border-radius: 100px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.18s;
+      font-family: var(--font);
+    }
+    .vote-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+    .vote-btn.voted { background: var(--green-dim); border-color: var(--green); color: #a8d8a0; }
+
+    /* ─── CREW ─── */
+    .crew-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 0.85rem;
+    }
+    .crew-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 0.95rem;
+      text-align: center;
+      position: relative;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .crew-card:hover { border-color: var(--border-gold); box-shadow: 0 4px 14px rgba(0,0,0,0.45); }
+    .crew-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--surface3);
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--gold);
+      margin: 0 auto 0.7rem;
+      letter-spacing: 0.02em;
+      font-family: var(--font-mono);
+    }
+    .crew-name { font-size: 0.93rem; font-weight: 600; margin-bottom: 0.18rem; }
+    .crew-role { font-size: 0.73rem; font-weight: 400; color: var(--text-muted); margin-bottom: 0.65rem; min-height: 1em; }
+    .rsvp-badge { display: inline-block; font-size: 0.7rem; font-weight: 500; padding: 0.17rem 0.68rem; border-radius: 100px; }
+    .rsvp-in    { background: #0c1e0e; color: #70d070; border: 1px solid #183818; }
+    .rsvp-maybe { background: #241808; color: #c09050; border: 1px solid #483010; }
+    .rsvp-out   { background: #280e0e; color: #d07060; border: 1px solid #481818; }
+    .crew-del {
+      position: absolute; top: 0.5rem; right: 0.5rem;
+      background: none; border: none; color: var(--text-dim);
+      cursor: pointer; font-size: 0.82rem; opacity: 0;
+      transition: opacity 0.18s; padding: 0.2rem;
+    }
+    .crew-card:hover .crew-del { opacity: 1; }
+    .crew-del:hover { color: var(--red); }
+
+    /* ─── STAT BAR ─── */
+    .stat-bar {
+      display: flex; gap: 0; flex-wrap: wrap;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 1.4rem;
+      overflow: hidden;
+    }
+    .stat {
+      display: flex; flex-direction: column; gap: 0.15rem;
+      padding: 0.9rem 1.4rem;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--gold-light); font-family: var(--font-mono); }
+    .stat-label { font-size: 0.68rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.14em; }
+
+    /* ─── NOTES ─── */
+    .notes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.85rem; margin-bottom: 1.8rem; }
+    @media (max-width: 640px) { .notes-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 641px) and (max-width: 820px) { .notes-grid { grid-template-columns: 1fr 1fr; } }
+
+    .note-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.05rem 1.15rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .note-card h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.7rem;
+    }
+    .note-card textarea {
+      width: 100%; min-height: 125px; resize: vertical; line-height: 1.65;
+      font-size: 0.85rem;
+    }
+
+    /* ─── NOTE TABLE SECTION ─── */
+    .note-table-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.3rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .note-table-section h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.3rem;
+    }
+    .note-table-hint {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--text-dim);
+      font-style: italic;
+      margin-bottom: 0.9rem;
+    }
+
+    /* ─── EDITABLE TABLE ─── */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    .editable-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      min-width: 400px;
+    }
+
+    /* Header row */
+    .editable-table thead tr { background: var(--surface2); }
+    .editable-table th {
+      border: 1px solid var(--border);
+      padding: 0;
+      position: relative;
+      vertical-align: middle;
+    }
+    .th-cell { display: flex; align-items: center; padding: 0 0.2rem 0 0; }
+    .th-input {
+      background: transparent;
+      border: none;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.52rem 0.6rem;
+      flex: 1;
+      min-width: 60px;
+      font-family: var(--font);
+    }
+    .th-input:focus { background: var(--surface3); outline: none; }
+    .th-input::placeholder { color: var(--text-dim); }
+
+    .col-del-btn {
+      background: none; border: none;
+      color: var(--text-dim);
+      cursor: pointer; font-size: 0.68rem;
+      padding: 0.25rem 0.4rem;
+      opacity: 0;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+      font-family: var(--font);
+    }
+    .editable-table th:hover .col-del-btn { opacity: 1; }
+    .col-del-btn:hover { color: #c05040; }
+
+    /* Add-column header cell */
+    .add-col-th {
+      width: 34px;
+      background: transparent;
+      border: 1px dashed var(--border);
+      text-align: center;
+    }
+    .add-col-btn {
+      background: none; border: none;
+      color: var(--text-dim);
+      cursor: pointer; font-size: 1rem;
+      width: 100%; padding: 0.4rem;
+      transition: color 0.15s;
+      font-family: var(--font);
+    }
+    .add-col-btn:hover { color: var(--gold); }
+
+    /* Delete-row column */
+    .row-del-th { width: 28px; border: none !important; background: transparent; }
+    .editable-table td {
+      border: 1px solid var(--border);
+      padding: 0;
+      vertical-align: middle;
+    }
+    .td-input {
+      background: transparent; border: none;
+      color: var(--text);
+      font-size: 0.84rem; font-weight: 400;
+      padding: 0.48rem 0.65rem;
+      width: 100%; min-width: 70px;
+      font-family: var(--font);
+    }
+    .td-input:focus { background: var(--surface2); outline: none; }
+    .td-input::placeholder { color: var(--text-dim); }
+
+    /* Alternating body rows */
+    .editable-table tbody tr:nth-child(even) { background: rgba(26,33,24,0.5); }
+    .editable-table tbody tr:hover { background: var(--surface2); }
+    .editable-table tbody tr:hover .row-del-btn { opacity: 1; }
+
+    .row-del-td { width: 28px; border: none !important; text-align: center; background: transparent; }
+    .row-del-btn {
+      background: none; border: none;
+      color: var(--text-dim); cursor: pointer;
+      font-size: 0.72rem; opacity: 0;
+      transition: opacity 0.15s; padding: 0.3rem;
+    }
+    .row-del-btn:hover { color: #c05040; }
+
+    .table-empty { text-align: center; padding: 1.5rem; color: var(--text-dim); font-style: italic; font-size: 0.82rem; }
+
+    /* Add row button */
+    .add-row-btn {
+      background: none;
+      border: 1px dashed var(--border);
+      color: var(--text-dim);
+      cursor: pointer;
+      font-size: 0.78rem; font-weight: 500;
+      padding: 0.42rem 1.1rem;
+      border-radius: 6px;
+      margin-top: 0.6rem;
+      font-family: var(--font);
+      transition: all 0.15s;
+    }
+    .add-row-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* ─── LOCK SCREEN ─── */
+    #lockScreen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #07090a;
+      background-image:
+        repeating-linear-gradient(0deg,   transparent, transparent 24px, rgba(30,107,56,0.035) 24px, rgba(30,107,56,0.035) 25px),
+        repeating-linear-gradient(90deg,  transparent, transparent 24px, rgba(30,107,56,0.035) 24px, rgba(30,107,56,0.035) 25px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lock-card {
+      background: var(--surface);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      max-width: 340px;
+      width: 90%;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lock-suits {
+      font-size: 1.1rem;
+      letter-spacing: 0.55rem;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+    .lock-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      text-shadow: 0 0 30px rgba(201,162,39,0.4);
+      margin-bottom: 0.3rem;
+    }
+    .lock-sub {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.8rem;
+    }
+    .lock-input-wrap { position: relative; margin-bottom: 0.75rem; }
+    #passwordInput {
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-gold);
+      background: var(--surface2);
+      color: var(--text);
+    }
+    #passwordInput:focus { border-color: var(--gold); outline: none; }
+    .lock-btn {
+      width: 100%;
+      padding: 0.7rem;
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      color: #b8dab0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: all 0.18s;
+      letter-spacing: 0.05em;
+    }
+    .lock-btn:hover { background: var(--green); color: #fff; }
+    .lock-error {
+      font-size: 0.75rem;
+      color: #c05040;
+      margin-top: 0.6rem;
+      min-height: 1.1em;
+      font-style: italic;
+    }
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20%     { transform: translateX(-9px); }
+      40%     { transform: translateX(9px); }
+      60%     { transform: translateX(-6px); }
+      80%     { transform: translateX(6px); }
+    }
+    .shake { animation: shake 0.38s ease; }
+
+    /* ─── EXPORT MODAL ─── */
+    #exportModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(0,0,0,0.75);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    #exportModal.open { display: flex; }
+    .export-card {
+      background: var(--surface);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 1.75rem 1.75rem 1.5rem;
+      width: 100%;
+      max-width: 620px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 12px 56px rgba(0,0,0,0.8);
+    }
+    .export-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .export-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .export-close {
+      background: none; border: none;
+      color: var(--text-muted); cursor: pointer;
+      font-size: 1.1rem; padding: 0; line-height: 1;
+      transition: color 0.15s; flex-shrink: 0;
+    }
+    .export-close:hover { color: var(--text); }
+    .export-steps {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      border-left: 3px solid var(--gold-dim);
+    }
+    .export-steps strong { color: var(--text); font-weight: 600; }
+    .export-steps code {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: var(--surface3);
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      color: var(--gold);
+    }
+    #exportSnippet {
+      flex: 1;
+      min-height: 180px;
+      max-height: 280px;
+      resize: none;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      line-height: 1.5;
+      color: #a8c8a0;
+      background: #060908;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+    }
+    .export-footer {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .copy-feedback {
+      font-size: 0.78rem;
+      color: var(--green-light);
+      font-style: italic;
+      opacity: 0;
+      transition: opacity 0.2s;
+      margin-right: auto;
+    }
+    .copy-feedback.show { opacity: 1; }
+    .btn-export-copy {
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      color: #b8dab0;
+      padding: 0.55rem 1.2rem;
+      border-radius: 7px;
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.18s;
+    }
+    .btn-export-copy:hover { background: var(--green); color: #fff; }
+    .btn-export-close {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.55rem 1.2rem;
+      border-radius: 7px;
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 0.85rem;
+      transition: all 0.18s;
+    }
+    .btn-export-close:hover { border-color: var(--text-dim); color: var(--text); }
+
+    /* Export nav button */
+    .nav-export-btn {
+      background: transparent;
+      border: 1px solid var(--border-gold);
+      color: var(--gold-dim);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.18s;
+      font-family: var(--font);
+      letter-spacing: 0.03em;
+      opacity: 0.7;
+    }
+    .nav-export-btn:hover { border-color: var(--gold); color: var(--gold); opacity: 1; }
+
+    /* ─── MISC ─── */
+    .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-dim); font-style: italic; font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ LOCK SCREEN ═══ -->
+<div id="lockScreen">
+  <div class="lock-card">
+    <div class="lock-suits">♠ ♥ ♦ ♣</div>
+    <div class="lock-title">Kris's Bachelor Party</div>
+    <div class="lock-sub">Black Hawk · April 2026</div>
+    <div class="lock-input-wrap">
+      <input type="password" id="passwordInput" placeholder="Enter password"
+             onkeydown="if(event.key==='Enter') submitPassword()">
+    </div>
+    <button class="lock-btn" onclick="submitPassword()">Enter ♠</button>
+    <div class="lock-error" id="lockError"></div>
+  </div>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="header-suits">♠ &nbsp; ⛰ &nbsp; ♦ &nbsp; 🧗 &nbsp; ♣ &nbsp; ⛰ &nbsp; ♥</div>
+  <h1><span class="name">Kris's</span> <span class="rest">Bachelor Party</span></h1>
+  <div class="header-meta">Black Hawk, Colorado &nbsp;·&nbsp; April 9 – 14, 2026</div>
+  <div class="header-tagline">All In on the Mountain</div>
+
+  <!-- Mountain silhouette: two layers -->
+  <div class="mountain-wrap" aria-hidden="true">
+    <svg viewBox="0 0 1200 58" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Far range -->
+      <path d="M0,58 L130,22 L220,38 L340,8 L460,30 L570,4 L690,26 L810,14 L920,34 L1040,10 L1130,28 L1200,18 L1200,58 Z"
+            fill="rgba(18,56,28,0.55)"/>
+      <!-- Near range -->
+      <path d="M0,58 L90,40 L180,52 L290,28 L400,46 L510,22 L610,42 L720,30 L840,50 L940,36 L1060,54 L1150,38 L1200,48 L1200,58 Z"
+            fill="rgba(7,9,10,0.95)"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <button class="active" onclick="showTab('schedule', this)">📅 &nbsp;Schedule</button>
+  <button onclick="showTab('activities', this)">🃏 &nbsp;Activities</button>
+  <button onclick="showTab('crew', this)">♠ &nbsp;The Crew</button>
+  <button onclick="showTab('notes', this)">📝 &nbsp;Notes</button>
+  <button class="nav-export-btn" onclick="showExportModal()">↓ Export State</button>
+</nav>
+
+<!-- ═══ EXPORT MODAL ═══ -->
+<div id="exportModal">
+  <div class="export-card">
+    <div class="export-header">
+      <div class="export-title">↓ Export State</div>
+      <button class="export-close" onclick="closeExportModal()">✕</button>
+    </div>
+    <div class="export-steps">
+      <strong>How to bake your edits into the file:</strong><br>
+      1. Click <strong>Copy to Clipboard</strong> below<br>
+      2. Open <code>kris-bachelor-party.html</code> in any text editor<br>
+      3. Find the comment <code>// ── STATE: PASTE EXPORT HERE ──</code><br>
+      4. Select &amp; replace everything from that line down to <code>// ── END STATE ──</code><br>
+      5. Paste &amp; save — done. Re-upload to GitHub to publish the update.
+    </div>
+    <textarea id="exportSnippet" readonly spellcheck="false"></textarea>
+    <div class="export-footer">
+      <span class="copy-feedback" id="copyFeedback">✓ Copied to clipboard!</span>
+      <button class="btn-export-close" onclick="closeExportModal()">Close</button>
+      <button class="btn-export-copy" onclick="copyExport()">Copy to Clipboard</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MAIN ═══ -->
+<main>
+
+  <!-- ── SCHEDULE ── -->
+  <div id="schedule" class="tab-panel active">
+    <div class="section-title">📅 &nbsp;Trip Schedule</div>
+    <div id="scheduleContainer"></div>
+    <div class="add-day-wrap">
+      <button class="add-day-btn" onclick="addDay()">+ Add Day</button>
+    </div>
+  </div>
+
+  <!-- ── ACTIVITIES ── -->
+  <div id="activities" class="tab-panel">
+    <div class="section-title">🃏 &nbsp;Activities Brainstorm</div>
+    <div class="add-form">
+      <div class="add-form-title">+ Suggest an Activity</div>
+      <div class="form-row">
+        <input type="text" id="actName" placeholder="Activity name" style="flex:2;min-width:140px"
+               onkeydown="if(event.key==='Enter') addActivity()">
+        <input type="text" id="actDesc" placeholder="Short description (optional)" style="flex:3;min-width:140px"
+               onkeydown="if(event.key==='Enter') addActivity()">
+        <select id="actCat" style="flex:1;min-width:120px">
+          <option value="casino">🃏 Casino</option>
+          <option value="outdoor">🏔 Outdoor</option>
+          <option value="food">🍖 Food &amp; Drink</option>
+          <option value="other">✨ Other</option>
+        </select>
+        <button class="btn" onclick="addActivity()">Add</button>
+      </div>
+    </div>
+    <div class="activities-grid" id="activitiesGrid"></div>
+  </div>
+
+  <!-- ── CREW ── -->
+  <div id="crew" class="tab-panel">
+    <div class="section-title">♠ &nbsp;The Crew</div>
+    <div class="stat-bar" id="crewStats"></div>
+    <div class="add-form">
+      <div class="add-form-title">+ Add a Member</div>
+      <div class="form-row">
+        <input type="text" id="crewName" placeholder="Name" style="flex:2;min-width:120px"
+               onkeydown="if(event.key==='Enter') addCrew()">
+        <input type="text" id="crewRole" placeholder="Role / nickname (optional)" style="flex:2;min-width:130px"
+               onkeydown="if(event.key==='Enter') addCrew()">
+        <select id="crewRsvp" style="flex:1;min-width:110px">
+          <option value="in">✅ In</option>
+          <option value="maybe">🤔 Maybe</option>
+          <option value="out">❌ Out</option>
+        </select>
+        <button class="btn" onclick="addCrew()">Add</button>
+      </div>
+    </div>
+    <div class="crew-grid" id="crewGrid"></div>
+  </div>
+
+  <!-- ── NOTES ── -->
+  <div id="notes" class="tab-panel">
+    <div class="section-title">📝 &nbsp;Notes &amp; Ideas</div>
+
+    <!-- Free-text note cards -->
+    <div class="notes-grid">
+      <div class="note-card"><h3>🏨 Lodging</h3><textarea placeholder="Airbnb / hotel links, address, check-in code, parking..."></textarea></div>
+      <div class="note-card"><h3>🚗 Transportation</h3><textarea placeholder="Who's driving? Rental cars? Denver airport pickup times..."></textarea></div>
+      <div class="note-card"><h3>🧗 Climbing Logistics</h3><textarea placeholder="Guide service? Gear rental? Route grades, Clear Creek Canyon beta, skill levels..."></textarea></div>
+    </div>
+
+    <!-- Editable table: Restaurants -->
+    <div class="note-table-section">
+      <h3>🍽️ Restaurants</h3>
+      <p class="note-table-hint">Click any column header to rename it &nbsp;·&nbsp; + to add a column &nbsp;·&nbsp; hover a row to delete it</p>
+      <div id="table-restaurants"></div>
+    </div>
+
+    <!-- Editable table: Casino Tips -->
+    <div class="note-table-section">
+      <h3>🃏 Casino Tips</h3>
+      <p class="note-table-hint">Click any column header to rename it &nbsp;·&nbsp; + to add a column &nbsp;·&nbsp; hover a row to delete it</p>
+      <div id="table-casino"></div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  PASSWORD GATE
+// ═══════════════════════════════════════════════════════════════
+
+const PASSWORD = 'allin2026'; // ← change this to whatever you like
+const SESSION_KEY = 'bp_auth';
+
+function initLockScreen() {
+  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    document.getElementById('lockScreen').style.display = 'none';
+  }
+  // else: lock screen stays visible (default display:flex from CSS)
+}
+
+function submitPassword() {
+  const input = document.getElementById('passwordInput');
+  const error = document.getElementById('lockError');
+  if (input.value === PASSWORD) {
+    sessionStorage.setItem(SESSION_KEY, '1');
+    document.getElementById('lockScreen').style.display = 'none';
+    input.value = '';
+    error.textContent = '';
+  } else {
+    input.value = '';
+    error.textContent = 'Incorrect password — try again';
+    input.classList.remove('shake');
+    void input.offsetWidth; // force reflow so animation restarts
+    input.classList.add('shake');
+    setTimeout(() => input.classList.remove('shake'), 400);
+    setTimeout(() => { error.textContent = ''; }, 3000);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════════════════
+
+// ── STATE: PASTE EXPORT HERE ──
+let days = [
+  {
+    "id": 1,
+    "badge": "Thu · Apr 9",
+    "title": "Day 1: Arrival Day ✈️",
+    "sub": "Just the tip",
+    "events": [
+      {
+        "id": 101,
+        "time": "Early AM",
+        "name": "Flight Arrivals & Tahoe Pickup",
+        "note": "Gather at airport, get car, pick up Kris",
+        "tag": "travel"
+      },
+      {
+        "id": 102,
+        "time": "Afternoon",
+        "name": "Boozy Lunch in Denver",
+        "note": "Keep it simple and quick",
+        "tag": "food"
+      },
+      {
+        "id": 103,
+        "time": "3:00 PM",
+        "name": "Drive to Moose Hoose 🫎 (4pm check-in)",
+        "note": "Head to Black Hawk pad, get settled",
+        "tag": "travel"
+      },
+      {
+        "id": 118,
+        "time": "Night",
+        "name": "Grab House Supplies / Casino Hop / Wander Black Hawk",
+        "note": "Casual exploration",
+        "tag": "casino"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "badge": "Fri · Apr 10",
+    "title": "Day 2: Degen Boogaloo ♥️",
+    "sub": "Praise Gamblor",
+    "events": [
+      {
+        "id": 104,
+        "time": "Morning",
+        "name": "Breakfast / Brunch",
+        "note": "Mimosas, bitch",
+        "tag": "food"
+      },
+      {
+        "id": 105,
+        "time": "Morning",
+        "name": "[TENTATIVE] Hike Clear Creek Canyon",
+        "note": "Explore mother nature, piss in the wind",
+        "tag": "outdoor"
+      },
+      {
+        "id": 106,
+        "time": "Afternoon",
+        "name": "Food & Beer",
+        "note": "Sustenance",
+        "tag": "food"
+      },
+      {
+        "id": 107,
+        "time": "3:00 PM",
+        "name": "🃏 MOOSE HOOSE TOURNAMENT: The 2026 Krazy Kris Klassic 🃏",
+        "note": "Home game poker tournament with special rules",
+        "tag": "casino"
+      },
+      {
+        "id": 119,
+        "time": "Night",
+        "name": "Rick's Cabaret",
+        "note": "\"Steak\"",
+        "tag": "other"
+      },
+      {
+        "id": 120,
+        "time": "Late Nite",
+        "name": "Gamble",
+        "note": "Gamble.",
+        "tag": "casino"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "badge": "Sat · Apr 11",
+    "title": "Day 3: White Girl Wasted ♦️",
+    "sub": "Do you boys like Mexico?",
+    "events": [
+      {
+        "id": 108,
+        "time": "Morning",
+        "name": "[TENTATIVE] Hike or E-Bike in Rockies",
+        "note": "Rent bikes or other (weather permitting)",
+        "tag": "outdoor"
+      },
+      {
+        "id": 109,
+        "time": "Afternoon",
+        "name": "Group BBQ & Hang",
+        "note": "Make burgers etc at the house, poker home games",
+        "tag": "food"
+      },
+      {
+        "id": 110,
+        "time": "Evening",
+        "name": "Bachelor Bar Hop",
+        "note": "Bachelor rite of passage - costume TBD",
+        "tag": "other"
+      },
+      {
+        "id": 121,
+        "time": "Late Nite",
+        "name": "Gamble",
+        "note": "GAMBLE.",
+        "tag": "casino"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "badge": "Sun · Apr 12",
+    "title": "Day 4: When Nature Calls ♣️",
+    "sub": "Natural bush",
+    "events": [
+      {
+        "id": 111,
+        "time": "Morning",
+        "name": "[TENTATIVE] Multi-Pitch Rock Climb in Eldorado Canyon",
+        "note": "Confirm attendees, will be roughly 8am-4pm",
+        "tag": "outdoor"
+      },
+      {
+        "id": 112,
+        "time": "Afternoon",
+        "name": "[TENTATIVE] Recovery & Balls Icing",
+        "note": "We're old",
+        "tag": "casino"
+      },
+      {
+        "id": 113,
+        "time": "Evening",
+        "name": "Nice Dinner [LOCATION TBD]",
+        "note": "We earned it",
+        "tag": "food"
+      },
+      {
+        "id": 122,
+        "time": "Late Nite",
+        "name": "Gamble",
+        "note": "gamboooool",
+        "tag": "casino"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "badge": "Mon · Apr 13",
+    "title": "Day 5: Chill Mode ♠️",
+    "sub": "Las Mermaids chupar me dry",
+    "events": [
+      {
+        "id": 114,
+        "time": "Morning",
+        "name": "Morning Hike [LOCATION TBD]",
+        "note": "One last adventure on the mountain",
+        "tag": "outdoor"
+      },
+      {
+        "id": 115,
+        "time": "Afternoon",
+        "name": "[TENTATIVE] Casino / Free Time",
+        "note": "Gamble on lean hogs",
+        "tag": "casino"
+      },
+      {
+        "id": 116,
+        "time": "Evening",
+        "name": "Final Dinner",
+        "note": "Kris's Last Supper",
+        "tag": "food"
+      },
+      {
+        "id": 123,
+        "time": "Late Nite",
+        "name": "Final Degen Mode: Night Out",
+        "note": "Rick, is that you?",
+        "tag": "other"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "badge": "Tue · Apr 14",
+    "title": "Day 6: Refractory Period ✈️",
+    "sub": "We'll always have the crabs",
+    "events": [
+      {
+        "id": 117,
+        "time": "11:00 AM",
+        "name": "Moose Hoose Checkout: 11:00 AM",
+        "note": "Bye mooses",
+        "tag": "travel"
+      },
+      {
+        "id": 124,
+        "time": "11:30 AM",
+        "name": "Drive to Denver",
+        "note": "Heading back to civilization",
+        "tag": "travel"
+      },
+      {
+        "id": 125,
+        "time": "Afternoon",
+        "name": "[TBD: DENVER ACTIVITY IF TIME]",
+        "note": "Jelqing out one more thing",
+        "tag": "other"
+      },
+      {
+        "id": 126,
+        "time": "Evening",
+        "name": "Flights Home: Mission Accomplished",
+        "note": "Annual bachelor parties forever",
+        "tag": "other"
+      }
+    ]
+  }
+];
+
+let activities = [
+  {
+    "id": 3,
+    "name": "Casino Crawl",
+    "desc": "Hit every casino on the strip: Ameristar, Isle of Capri, Lady Luck, Monarch.",
+    "icon": "🎰",
+    "cat": "casino",
+    "votes": 0,
+    "voted": false
+  },
+  {
+    "id": 4,
+    "name": "Hiking — Arapaho National Forest",
+    "desc": "Alpine trails and ridgelines with views of the Continental Divide.",
+    "icon": "🥾",
+    "cat": "outdoor",
+    "votes": 0,
+    "voted": false
+  },
+  {
+    "id": 7,
+    "name": "Group Steakhouse Dinner",
+    "desc": "A proper sit-down dinner to toast Kris. Steak, wine, roasts, speeches.",
+    "icon": "🥩",
+    "cat": "food",
+    "votes": 0,
+    "voted": false
+  },
+  {
+    "id": 8,
+    "name": "Mountain Biking — Eldora Area",
+    "desc": "Flowing singletrack in the mountains above Nederland, ~45 min away.",
+    "icon": "🚵",
+    "cat": "outdoor",
+    "votes": 0,
+    "voted": false
+  },
+  {
+    "id": 9,
+    "name": "Blackjack Marathon",
+    "desc": "Pick a table, set a limit, and grind it out. Dealer goes last.",
+    "icon": "♠️",
+    "cat": "casino",
+    "votes": 0,
+    "voted": false
+  },
+  {
+    "id": 10,
+    "name": "Sunrise Hike",
+    "desc": "Early riser crew hikes up for a summit sunrise before the day starts.",
+    "icon": "🌄",
+    "cat": "outdoor",
+    "votes": 0,
+    "voted": false
+  }
+];
+
+let crew = [
+  {
+    "id": 1,
+    "name": "Kris",
+    "role": "The Bachelor 🎉",
+    "rsvp": "in"
+  },
+  {
+    "id": 2,
+    "name": "Tim",
+    "role": "The Don Dada",
+    "rsvp": "in"
+  },
+  {
+    "id": 3,
+    "name": "Jeff",
+    "role": "The Pharmacist",
+    "rsvp": "in"
+  },
+  {
+    "id": 4,
+    "name": "Atticus",
+    "role": "The Pirate",
+    "rsvp": "in"
+  },
+  {
+    "id": 5,
+    "name": "Sam",
+    "role": "The Mayor of Newps",
+    "rsvp": "maybe"
+  },
+  {
+    "id": 6,
+    "name": "Lebo",
+    "role": "The Sushi Master",
+    "rsvp": "maybe"
+  },
+  {
+    "id": 7,
+    "name": "Nick",
+    "role": "The Broski",
+    "rsvp": "in"
+  },
+  {
+    "id": 8,
+    "name": "Max",
+    "role": "The Expectant",
+    "rsvp": "maybe"
+  },
+  {
+    "id": 9,
+    "name": "Phil",
+    "role": "The Belizer",
+    "rsvp": "maybe"
+  },
+  {
+    "id": 10,
+    "name": "Martin",
+    "role": "The Paternity Leave",
+    "rsvp": "maybe"
+  }
+];
+
+let noteTables = {
+  "restaurants": {
+    "headers": [
+      "Restaurant",
+      "Type / Cuisine",
+      "Location",
+      "Notes"
+    ],
+    "rows": []
+  },
+  "casino": {
+    "headers": [
+      "Casino",
+      "Best Games",
+      "Min Bet",
+      "Notes"
+    ],
+    "rows": []
+  }
+};
+
+let nextDayId   = 7;
+let nextEventId = 127;
+let nextActId   = 11;
+let nextCrewId  = 11;
+// ── END STATE ──
+
+// Editing state
+let editingEvent     = null;  // {dayId, eventId} or null
+let editingDayHeader = null;  // dayId or null
+
+const SUITS = ['♠', '♥', '♦', '♣'];
+
+// ═══════════════════════════════════════════════════════════════
+//  EXPORT STATE
+// ═══════════════════════════════════════════════════════════════
+
+function generateExportSnippet() {
+  // Deep-clone and clean days (strip internal _isNew flags)
+  const exportDays = JSON.parse(JSON.stringify(days)).map(d => ({
+    ...d, events: d.events.map(e => { const {_isNew, ...r} = e; return r; })
+  }));
+  // Reset votes/voted so everyone starts fresh
+  const exportActivities = JSON.parse(JSON.stringify(activities)).map(a => ({
+    ...a, votes: 0, voted: false
+  }));
+  const exportCrew       = JSON.parse(JSON.stringify(crew));
+  const exportTables     = JSON.parse(JSON.stringify(noteTables));
+
+  const fmt = (v) => JSON.stringify(v, null, 2);
+
+  return `// ── STATE: PASTE EXPORT HERE ──
+let days = ${fmt(exportDays)};
+
+let activities = ${fmt(exportActivities)};
+
+let crew = ${fmt(exportCrew)};
+
+let noteTables = ${fmt(exportTables)};
+
+let nextDayId   = ${nextDayId};
+let nextEventId = ${nextEventId};
+let nextActId   = ${nextActId};
+let nextCrewId  = ${nextCrewId};
+// ── END STATE ──`;
+}
+
+function showExportModal() {
+  document.getElementById('exportSnippet').value = generateExportSnippet();
+  document.getElementById('exportModal').classList.add('open');
+}
+
+function closeExportModal() {
+  document.getElementById('exportModal').classList.remove('open');
+  document.getElementById('copyFeedback').classList.remove('show');
+}
+
+function copyExport() {
+  const ta = document.getElementById('exportSnippet');
+  ta.select();
+  navigator.clipboard.writeText(ta.value).then(() => {
+    const fb = document.getElementById('copyFeedback');
+    fb.classList.add('show');
+    setTimeout(() => fb.classList.remove('show'), 2500);
+  }).catch(() => {
+    // Fallback for browsers without clipboard API
+    document.execCommand('copy');
+    const fb = document.getElementById('copyFeedback');
+    fb.classList.add('show');
+    setTimeout(() => fb.classList.remove('show'), 2500);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  TAG / CATEGORY METADATA
+// ═══════════════════════════════════════════════════════════════
+
+const tagMeta = {
+  casino:  {label:'🃏 Casino',  cls:'t-casino' },
+  outdoor: {label:'🏔 Outdoor', cls:'t-outdoor'},
+  food:    {label:'🍖 Food',    cls:'t-food'   },
+  travel:  {label:'✈️ Travel',  cls:'t-travel' },
+  other:   {label:'✨ Other',   cls:'t-other'  },
+};
+const catMeta = {
+  casino:  {label:'🃏 Casino',  cls:'t-casino' },
+  outdoor: {label:'🏔 Outdoor', cls:'t-outdoor'},
+  food:    {label:'🍖 Food',    cls:'t-food'   },
+  other:   {label:'✨ Other',   cls:'t-other'  },
+};
+const catIcons = {casino:'🃏', outdoor:'🧗', food:'🍖', other:'✨'};
+
+// ═══════════════════════════════════════════════════════════════
+//  SCHEDULE RENDER
+// ═══════════════════════════════════════════════════════════════
+
+function renderSchedule() {
+  const container = document.getElementById('scheduleContainer');
+  if (!days.length) {
+    container.innerHTML = '<div class="empty-state">No days yet — add one below!</div>';
+    return;
+  }
+  container.innerHTML = days.map(day => renderDay(day)).join('');
+}
+
+function renderDay(day) {
+  const headerHtml = (editingDayHeader === day.id)
+    ? renderDayHeaderEdit(day)
+    : renderDayHeaderView(day);
+  const eventsHtml = day.events.map(ev => renderEvent(day.id, ev)).join('');
+  return `
+    <div class="day-card" id="day-${day.id}">
+      ${headerHtml}
+      <div class="day-events">
+        ${eventsHtml || '<div style="padding:0.38rem 0;color:var(--text-dim);font-size:0.8rem;font-style:italic">No events — add one below</div>'}
+        <div class="add-event-strip">
+          <button class="add-event-btn" onclick="addEvent(${day.id})">+ Add event</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderDayHeaderView(day) {
+  const suit = SUITS[(day.id - 1) % 4];
+  return `
+    <div class="day-header">
+      <div class="day-badge">${escHtml(day.badge)}</div>
+      <div class="day-title">${escHtml(day.title)}</div>
+      <div class="day-sub">${escHtml(day.sub)}</div>
+      <div class="day-suit" aria-hidden="true">${suit}</div>
+      <div class="day-hdr-actions">
+        <button class="icon-btn edit" onclick="startEditDayHeader(${day.id})" title="Edit day">✎</button>
+        <button class="icon-btn del"  onclick="deleteDay(${day.id})"          title="Delete day">✕</button>
+      </div>
+    </div>`;
+}
+
+function renderDayHeaderEdit(day) {
+  return `
+    <div class="day-edit-form">
+      <input class="day-edit-badge" id="dh-badge-${day.id}" value="${escAttr(day.badge)}" placeholder="Thu · Apr 9"
+             onkeydown="if(event.key==='Enter') saveDayHeader(${day.id}); if(event.key==='Escape') cancelEditDayHeader();">
+      <input class="day-edit-title" id="dh-title-${day.id}" value="${escAttr(day.title)}" placeholder="Day title"
+             onkeydown="if(event.key==='Enter') saveDayHeader(${day.id}); if(event.key==='Escape') cancelEditDayHeader();">
+      <input class="day-edit-sub"   id="dh-sub-${day.id}"   value="${escAttr(day.sub)}"   placeholder="Subtitle (optional)"
+             onkeydown="if(event.key==='Enter') saveDayHeader(${day.id}); if(event.key==='Escape') cancelEditDayHeader();">
+      <button class="btn-sm btn-save"   onclick="saveDayHeader(${day.id})">✓ Save</button>
+      <button class="btn-sm btn-cancel" onclick="cancelEditDayHeader()">✕</button>
+    </div>`;
+}
+
+function renderEvent(dayId, ev) {
+  return (editingEvent && editingEvent.dayId === dayId && editingEvent.eventId === ev.id)
+    ? renderEventEdit(dayId, ev)
+    : renderEventView(dayId, ev);
+}
+
+function renderEventView(dayId, ev) {
+  const tm = tagMeta[ev.tag] || tagMeta.other;
+  return `
+    <div class="event-row">
+      <div class="event-time">${escHtml(ev.time)}</div>
+      <div class="event-body">
+        <div class="event-name">${escHtml(ev.name)}<span class="etag ${tm.cls}">${tm.label}</span></div>
+        ${ev.note ? `<div class="event-note">${escHtml(ev.note)}</div>` : ''}
+      </div>
+      <div class="ev-actions">
+        <button class="icon-btn edit" onclick="startEditEvent(${dayId},${ev.id})" title="Edit">✎</button>
+        <button class="icon-btn del"  onclick="deleteEvent(${dayId},${ev.id})"    title="Delete">✕</button>
+      </div>
+    </div>`;
+}
+
+function renderEventEdit(dayId, ev) {
+  const tagOpts = Object.entries(tagMeta).map(([k,v]) =>
+    `<option value="${k}" ${ev.tag===k?'selected':''}>${v.label}</option>`).join('');
+  return `
+    <div class="event-edit-form">
+      <div class="ev-edit-r1">
+        <input class="edit-time" id="ev-time-${ev.id}" value="${escAttr(ev.time)}" placeholder="Time / period"
+               onkeydown="if(event.key==='Escape') cancelEditEvent();">
+        <input class="edit-name" id="ev-name-${ev.id}" value="${escAttr(ev.name)}" placeholder="Event name"
+               onkeydown="if(event.key==='Enter') saveEvent(${dayId},${ev.id}); if(event.key==='Escape') cancelEditEvent();">
+        <select class="edit-tag" id="ev-tag-${ev.id}">${tagOpts}</select>
+      </div>
+      <div class="ev-edit-r2">
+        <div class="ev-spacer"></div>
+        <input class="edit-note" id="ev-note-${ev.id}" value="${escAttr(ev.note||'')}" placeholder="Note (optional)"
+               onkeydown="if(event.key==='Enter') saveEvent(${dayId},${ev.id}); if(event.key==='Escape') cancelEditEvent();">
+        <button class="btn-sm btn-save"   onclick="saveEvent(${dayId},${ev.id})">✓ Save</button>
+        <button class="btn-sm btn-cancel" onclick="cancelEditEvent()">✕ Cancel</button>
+      </div>
+    </div>`;
+}
+
+// ─── Schedule editing actions ─────────────────────────────────
+
+function startEditDayHeader(id) {
+  editingDayHeader = id; editingEvent = null;
+  renderSchedule(); setTimeout(() => focusEl(`dh-title-${id}`), 30);
+}
+function saveDayHeader(id) {
+  const d = days.find(x => x.id === id); if (!d) return;
+  d.badge = val(`dh-badge-${id}`); d.title = val(`dh-title-${id}`); d.sub = val(`dh-sub-${id}`);
+  editingDayHeader = null; renderSchedule(); save();
+}
+function cancelEditDayHeader() { editingDayHeader = null; renderSchedule(); }
+function deleteDay(id) {
+  days = days.filter(d => d.id !== id);
+  if (editingDayHeader === id) editingDayHeader = null;
+  renderSchedule(); save();
+}
+function addDay() {
+  const nd = {id: nextDayId++, badge:'New Day', title:'New Day', sub:'', events:[]};
+  days.push(nd); editingDayHeader = nd.id; editingEvent = null;
+  renderSchedule();
+  setTimeout(() => { const el = document.getElementById(`dh-title-${nd.id}`); if (el) { el.focus(); el.select(); } }, 30);
+  save();
+}
+function startEditEvent(dayId, eventId) {
+  editingEvent = {dayId, eventId}; editingDayHeader = null;
+  renderSchedule(); setTimeout(() => focusEl(`ev-name-${eventId}`), 30);
+}
+function saveEvent(dayId, eventId) {
+  const d = days.find(x => x.id === dayId); if (!d) return;
+  const ev = d.events.find(e => e.id === eventId); if (!ev) return;
+  ev.time = val(`ev-time-${eventId}`);
+  ev.name = val(`ev-name-${eventId}`);
+  ev.tag  = val(`ev-tag-${eventId}`);
+  ev.note = val(`ev-note-${eventId}`);
+  delete ev._isNew;
+  editingEvent = null; renderSchedule(); save();
+}
+function cancelEditEvent() {
+  if (editingEvent) {
+    const d = days.find(x => x.id === editingEvent.dayId);
+    if (d) { const ev = d.events.find(e => e.id === editingEvent.eventId); if (ev && ev._isNew) d.events = d.events.filter(e => e.id !== editingEvent.eventId); }
+  }
+  editingEvent = null; renderSchedule();
+}
+function deleteEvent(dayId, eventId) {
+  const d = days.find(x => x.id === dayId); if (!d) return;
+  d.events = d.events.filter(e => e.id !== eventId);
+  if (editingEvent && editingEvent.eventId === eventId) editingEvent = null;
+  renderSchedule(); save();
+}
+function addEvent(dayId) {
+  const d = days.find(x => x.id === dayId); if (!d) return;
+  const ne = {id: nextEventId++, time:'', name:'', note:'', tag:'other', _isNew:true};
+  d.events.push(ne); editingEvent = {dayId, eventId: ne.id}; editingDayHeader = null;
+  renderSchedule(); setTimeout(() => focusEl(`ev-time-${ne.id}`), 30); save();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  ACTIVITIES
+// ═══════════════════════════════════════════════════════════════
+
+function renderActivities() {
+  const grid = document.getElementById('activitiesGrid');
+  const sorted = [...activities].sort((a,b) => b.votes - a.votes);
+  if (!sorted.length) { grid.innerHTML = '<div class="empty-state">No activities yet — suggest one above!</div>'; return; }
+  grid.innerHTML = sorted.map(a => {
+    const cm = catMeta[a.cat] || catMeta.other;
+    return `
+      <div class="act-card">
+        <button class="act-del" onclick="deleteActivity(${a.id})" title="Remove">✕</button>
+        <div class="act-top"><div class="act-icon">${a.icon}</div><div class="act-name">${escHtml(a.name)}</div></div>
+        ${a.desc ? `<div class="act-desc">${escHtml(a.desc)}</div>` : ''}
+        <div class="act-footer">
+          <span class="etag ${cm.cls}">${cm.label}</span>
+          <button class="vote-btn ${a.voted?'voted':''}" onclick="toggleVote(${a.id})">
+            ${a.voted ? '✓ voted' : '▲ vote'} &nbsp;<strong>${a.votes}</strong>
+          </button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function deleteActivity(id) {
+  activities = activities.filter(a => a.id !== id);
+  renderActivities(); save();
+}
+
+function toggleVote(id) {
+  const a = activities.find(x => x.id === id); if (!a) return;
+  a.voted = !a.voted; a.votes += a.voted ? 1 : -1;
+  renderActivities(); save();
+}
+function addActivity() {
+  const name = document.getElementById('actName').value.trim(); if (!name) return;
+  const desc = document.getElementById('actDesc').value.trim();
+  const cat  = document.getElementById('actCat').value;
+  activities.push({id: nextActId++, name, desc, icon: catIcons[cat]||'✨', cat, votes:0, voted:false});
+  document.getElementById('actName').value = '';
+  document.getElementById('actDesc').value = '';
+  renderActivities(); save();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  CREW
+// ═══════════════════════════════════════════════════════════════
+
+const rsvpMeta = {
+  in:    {label:'✅ In',    cls:'rsvp-in'   },
+  maybe: {label:'🤔 Maybe', cls:'rsvp-maybe'},
+  out:   {label:'❌ Out',   cls:'rsvp-out'  },
+};
+function initials(n) { return n.trim().split(/\s+/).map(w=>w[0]).join('').toUpperCase().slice(0,2); }
+
+function renderCrew() {
+  const grid = document.getElementById('crewGrid');
+  if (!crew.length) { grid.innerHTML = '<div class="empty-state">No crew members yet — add them above!</div>'; }
+  else {
+    grid.innerHTML = crew.map(c => {
+      const rm = rsvpMeta[c.rsvp] || rsvpMeta.in;
+      return `
+        <div class="crew-card">
+          <button class="crew-del" onclick="delCrew(${c.id})" title="Remove">✕</button>
+          <div class="crew-avatar">${initials(c.name)}</div>
+          <div class="crew-name">${escHtml(c.name)}</div>
+          <div class="crew-role">${escHtml(c.role)||'&nbsp;'}</div>
+          <span class="rsvp-badge ${rm.cls}">${rm.label}</span>
+        </div>`;
+    }).join('');
+  }
+  const inC = crew.filter(c=>c.rsvp==='in').length;
+  const maC = crew.filter(c=>c.rsvp==='maybe').length;
+  const ouC = crew.filter(c=>c.rsvp==='out').length;
+  document.getElementById('crewStats').innerHTML = `
+    <div class="stat"><div class="stat-value">${crew.length}</div><div class="stat-label">Total</div></div>
+    <div class="stat"><div class="stat-value" style="color:#70d070">${inC}</div><div class="stat-label">Confirmed</div></div>
+    <div class="stat"><div class="stat-value" style="color:#c09050">${maC}</div><div class="stat-label">Maybe</div></div>
+    <div class="stat"><div class="stat-value" style="color:#d07060">${ouC}</div><div class="stat-label">Out</div></div>`;
+}
+function addCrew() {
+  const name = document.getElementById('crewName').value.trim(); if (!name) return;
+  const role = document.getElementById('crewRole').value.trim();
+  const rsvp = document.getElementById('crewRsvp').value;
+  crew.push({id: nextCrewId++, name, role, rsvp});
+  document.getElementById('crewName').value = '';
+  document.getElementById('crewRole').value = '';
+  renderCrew(); save();
+}
+function delCrew(id) { crew = crew.filter(c => c.id !== id); renderCrew(); save(); }
+
+// ═══════════════════════════════════════════════════════════════
+//  EDITABLE TABLES (Notes)
+// ═══════════════════════════════════════════════════════════════
+
+function renderTable(tableId) {
+  const t = noteTables[tableId];
+  const container = document.getElementById(`table-${tableId}`);
+  if (!container) return;
+
+  const headerCells = t.headers.map((h, ci) => `
+    <th class="editable-th">
+      <div class="th-cell">
+        <input type="text" class="th-input" value="${escAttr(h)}" placeholder="Column"
+               oninput="updateTableHeader('${tableId}',${ci},this.value)">
+        ${t.headers.length > 1
+          ? `<button class="col-del-btn" onclick="deleteTableCol('${tableId}',${ci})" title="Remove column">✕</button>`
+          : ''}
+      </div>
+    </th>`).join('');
+
+  const bodyRows = t.rows.map((row, ri) => {
+    const cells = t.headers.map((_, ci) => `
+      <td class="editable-td">
+        <input type="text" class="td-input" value="${escAttr(row[ci]||'')}" placeholder="—"
+               oninput="updateTableCell('${tableId}',${ri},${ci},this.value)">
+      </td>`).join('');
+    return `
+      <tr>
+        <td class="row-del-td">
+          <button class="row-del-btn" onclick="deleteTableRow('${tableId}',${ri})" title="Delete row">✕</button>
+        </td>
+        ${cells}
+      </tr>`;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="table-scroll">
+      <table class="editable-table">
+        <thead>
+          <tr>
+            <th class="row-del-th"></th>
+            ${headerCells}
+            <th class="add-col-th">
+              <button class="add-col-btn" onclick="addTableCol('${tableId}')" title="Add column">+</button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          ${bodyRows || `<tr><td colspan="${t.headers.length+2}" class="table-empty">No entries yet — add a row below</td></tr>`}
+        </tbody>
+      </table>
+    </div>
+    <button class="add-row-btn" onclick="addTableRow('${tableId}')">+ Add row</button>`;
+}
+
+function renderNoteTables() {
+  renderTable('restaurants');
+  renderTable('casino');
+}
+
+function addTableRow(tableId) {
+  noteTables[tableId].rows.push(new Array(noteTables[tableId].headers.length).fill(''));
+  renderTable(tableId); saveTables();
+}
+function deleteTableRow(tableId, ri) {
+  noteTables[tableId].rows.splice(ri, 1);
+  renderTable(tableId); saveTables();
+}
+function addTableCol(tableId) {
+  const t = noteTables[tableId];
+  t.headers.push('Column');
+  t.rows.forEach(r => r.push(''));
+  renderTable(tableId); saveTables();
+}
+function deleteTableCol(tableId, ci) {
+  const t = noteTables[tableId];
+  if (t.headers.length <= 1) return;
+  t.headers.splice(ci, 1);
+  t.rows.forEach(r => r.splice(ci, 1));
+  renderTable(tableId); saveTables();
+}
+function updateTableHeader(tableId, ci, v) { noteTables[tableId].headers[ci] = v; saveTables(); }
+function updateTableCell(tableId, ri, ci, v) {
+  if (noteTables[tableId].rows[ri]) { noteTables[tableId].rows[ri][ci] = v; saveTables(); }
+}
+function saveTables() { localStorage.setItem('bp_noteTables', JSON.stringify(noteTables)); }
+
+// ═══════════════════════════════════════════════════════════════
+//  NOTES TEXT PERSISTENCE
+// ═══════════════════════════════════════════════════════════════
+
+function setupNotes() {
+  document.querySelectorAll('.note-card textarea').forEach((ta, i) => {
+    const key = `bpNote_${i}`;
+    ta.value = localStorage.getItem(key) || '';
+    ta.addEventListener('input', () => localStorage.setItem(key, ta.value));
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  PERSISTENCE
+// ═══════════════════════════════════════════════════════════════
+
+function save() {
+  const cleanDays = days.map(d => ({...d, events: d.events.map(e => { const {_isNew,...r} = e; return r; })}));
+  localStorage.setItem('bp_days',        JSON.stringify(cleanDays));
+  localStorage.setItem('bp_nextDayId',   nextDayId);
+  localStorage.setItem('bp_nextEventId', nextEventId);
+  localStorage.setItem('bp_activities',  JSON.stringify(activities));
+  localStorage.setItem('bp_crew',        JSON.stringify(crew));
+  localStorage.setItem('bp_nextActId',   nextActId);
+  localStorage.setItem('bp_nextCrewId',  nextCrewId);
+}
+
+function load() {
+  const d = localStorage.getItem('bp_days');
+  const a = localStorage.getItem('bp_activities');
+  const c = localStorage.getItem('bp_crew');
+  const t = localStorage.getItem('bp_noteTables');
+  if (d) days       = JSON.parse(d);
+  if (a) activities = JSON.parse(a);
+  if (c) crew       = JSON.parse(c);
+  if (t) noteTables = JSON.parse(t);
+  nextDayId   = parseInt(localStorage.getItem('bp_nextDayId')   || nextDayId);
+  nextEventId = parseInt(localStorage.getItem('bp_nextEventId') || nextEventId);
+  nextActId   = parseInt(localStorage.getItem('bp_nextActId')   || nextActId);
+  nextCrewId  = parseInt(localStorage.getItem('bp_nextCrewId')  || nextCrewId);
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  TAB SWITCHING
+// ═══════════════════════════════════════════════════════════════
+
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  UTILITIES
+// ═══════════════════════════════════════════════════════════════
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function escAttr(s) { return escHtml(s); }
+function val(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+function focusEl(id) { const el = document.getElementById(id); if (el) { el.focus(); if (el.tagName==='INPUT') el.select(); } }
+
+// ═══════════════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════════════
+
+initLockScreen();
+load();
+renderSchedule();
+renderActivities();
+renderCrew();
+renderNoteTables();
+setupNotes();
+</script>
+
+</body>
+</html>
