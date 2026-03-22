@@ -584,10 +584,58 @@
       letter-spacing: 0.14em;
       margin-bottom: 0.7rem;
     }
-    .note-card textarea {
-      width: 100%; min-height: 125px; resize: vertical; line-height: 1.65;
-      font-size: 0.85rem;
+    .note-body {
+      font-size: 0.84rem;
+      line-height: 1.7;
+      color: var(--text);
     }
+    .note-body p { margin-bottom: 0.6rem; }
+    .note-body p:last-child { margin-bottom: 0; }
+    .note-venue {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 0.45rem;
+      font-style: italic;
+    }
+    .note-address {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .note-kv {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      margin-bottom: 0.18rem;
+      align-items: baseline;
+    }
+    .note-kv-label {
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      flex-shrink: 0;
+      min-width: 76px;
+    }
+    .note-alert {
+      font-size: 0.71rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+    }
+    .note-link {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--green-light);
+      word-break: break-all;
+      margin-bottom: 0.8rem;
+      text-decoration: none;
+    }
+    .note-link:hover { color: var(--gold-light); text-decoration: underline; }
 
     /* ─── NOTE TABLE SECTION ─── */
     .note-table-section {
@@ -953,6 +1001,106 @@
 
     /* ─── MISC ─── */
     .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-dim); font-style: italic; font-size: 0.88rem; }
+
+    /* ─── MOBILE (≤ 600px) ─── */
+    @media (max-width: 600px) {
+      /* On touch devices there's no "hover" — make action buttons always visible */
+      .ev-actions,
+      .day-hdr-actions { opacity: 1; }
+      .act-del,
+      .crew-del { opacity: 1; }
+      .col-del-btn,
+      .row-del-btn { opacity: 1; }
+
+      /* Header: reduce padding, tighten font */
+      header { padding: 1.8rem 1rem 2.6rem; }
+      .header-suits { font-size: 0.88rem; letter-spacing: 0.4rem; }
+      header h1 { font-size: clamp(1.7rem, 8vw, 2.4rem); }
+      .header-meta { font-size: 0.7rem; letter-spacing: 0.16em; }
+      .header-tagline { font-size: 0.88rem; }
+
+      /* Nav: larger tap targets, wrap gracefully */
+      nav { gap: 0.3rem; padding: 0.75rem 0.6rem; }
+      nav button { padding: 0.58rem 0.9rem; font-size: 0.79rem; }
+      .nav-export-btn { font-size: 0.74rem; padding: 0.58rem 0.8rem; }
+
+      /* Main content area */
+      main { padding: 1.4rem 0.75rem 4rem; }
+
+      /* Section titles */
+      .section-title { font-size: 1rem; margin-bottom: 1rem; }
+
+      /* Day cards */
+      .day-header { padding: 0.7rem 0.95rem; gap: 0.55rem; }
+      .day-badge { font-size: 0.64rem; padding: 0.22rem 0.55rem; }
+      .day-title { font-size: 0.88rem; }
+      .day-events { padding: 0.15rem 0.95rem 0.3rem; }
+
+      /* Day header edit form */
+      .day-edit-form { flex-direction: column; padding: 0.7rem 0.95rem; }
+      .day-edit-badge,
+      .day-edit-title,
+      .day-edit-sub { width: 100%; flex: none; }
+
+      /* Event rows */
+      .event-row { gap: 0.45rem; }
+      .event-time { width: 56px; font-size: 0.66rem; }
+      .event-name { font-size: 0.83rem; }
+      .event-note { font-size: 0.71rem; }
+
+      /* Icon buttons: bigger touch targets */
+      .icon-btn { padding: 0.3rem 0.52rem; font-size: 0.82rem; }
+
+      /* Event edit form */
+      .ev-edit-r1 { flex-direction: column; gap: 0.38rem; }
+      .ev-edit-r2 { flex-wrap: wrap; gap: 0.38rem; }
+      .ev-spacer { display: none; }
+      .edit-time, .edit-name, .edit-tag, .edit-note { width: 100%; min-width: 0; flex: none; }
+      .btn-sm { padding: 0.42rem 1rem; }
+
+      /* Add event/day buttons */
+      .add-event-btn { font-size: 0.82rem; padding: 0.25rem 0; }
+      .add-day-btn { width: 100%; padding: 0.65rem; }
+
+      /* Activities: single column on small phones */
+      .activities-grid { grid-template-columns: 1fr; }
+      .act-card { padding: 1rem; }
+      .act-del { opacity: 1; }
+
+      /* Crew: 2 columns */
+      .crew-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+      .crew-card { padding: 1rem 0.75rem; }
+
+      /* Stat bar */
+      .stat { padding: 0.7rem 0.9rem; }
+      .stat-value { font-size: 1.2rem; }
+      .stat-label { font-size: 0.62rem; }
+
+      /* Add forms: stack all inputs vertically */
+      .add-form { padding: 0.85rem 1rem; }
+      .add-form-title { margin-bottom: 0.7rem; }
+      .form-row { flex-direction: column; gap: 0.45rem; }
+      .form-row > * { width: 100% !important; flex: none !important; min-width: 0 !important; }
+      .form-row .btn { text-align: center; }
+
+      /* Notes */
+      .note-card { padding: 0.9rem 1rem; }
+      .note-body { font-size: 0.82rem; }
+      .note-venue { font-size: 0.92rem; }
+      .note-card h3 { font-size: 0.7rem; }
+
+      /* Note table sections */
+      .note-table-section { padding: 0.9rem 1rem; }
+
+      /* Lock screen */
+      .lock-card { padding: 2rem 1.25rem; }
+
+      /* Export modal */
+      .export-card { padding: 1.25rem 1.1rem 1rem; max-height: 92vh; }
+      .export-footer { flex-wrap: wrap; gap: 0.5rem; }
+      .btn-export-copy, .btn-export-close { flex: 1; text-align: center; }
+      #exportSnippet { min-height: 140px; max-height: 200px; font-size: 0.68rem; }
+    }
   </style>
 </head>
 <body>
@@ -1011,7 +1159,7 @@
     <div class="export-steps">
       <strong>How to bake your edits into the file:</strong><br>
       1. Click <strong>Copy to Clipboard</strong> below<br>
-      2. Open <code>kris-bachelor-party.html</code> in any text editor<br>
+      2. Open <code>index.html</code> in any text editor<br>
       3. Find the comment <code>// ── STATE: PASTE EXPORT HERE ──</code><br>
       4. Select &amp; replace everything from that line down to <code>// ── END STATE ──</code><br>
       5. Paste &amp; save — done. Re-upload to GitHub to publish the update.
@@ -1087,9 +1235,31 @@
 
     <!-- Free-text note cards -->
     <div class="notes-grid">
-      <div class="note-card"><h3>🏨 Lodging</h3><textarea placeholder="Airbnb / hotel links, address, check-in code, parking..."></textarea></div>
-      <div class="note-card"><h3>🚗 Transportation</h3><textarea placeholder="Who's driving? Rental cars? Denver airport pickup times..."></textarea></div>
-      <div class="note-card"><h3>🧗 Climbing Logistics</h3><textarea placeholder="Guide service? Gear rental? Route grades, Clear Creek Canyon beta, skill levels..."></textarea></div>
+      <div class="note-card">
+        <h3>🏨 Lodging</h3>
+        <div class="note-body">
+          <div class="note-venue">"Moose Hoose"</div>
+          <div class="note-address">2004 Coyote Circle, Black Hawk, CO 80422</div>
+          <div class="note-kv"><span class="note-kv-label">Check-in</span> 4:00 PM · Apr 9</div>
+          <div class="note-kv"><span class="note-kv-label">Check-out</span> 11:00 AM · Apr 14</div>
+        </div>
+      </div>
+      <div class="note-card">
+        <h3>🚗 Transportation</h3>
+        <div class="note-body">
+          <p>We have one (1) Chevy Tahoe rented that seats 7 people. In the event that we end up having more than 7 RSVPs, we'll need to coordinate another rental, or some folks will need to commit to some lengthy Ubers.</p>
+          <p>Text Tim with any questions.</p>
+        </div>
+      </div>
+      <div class="note-card">
+        <h3>🧗 Climbing Logistics</h3>
+        <div class="note-body">
+          <div class="note-alert">⚠️ All climbers must complete the liability waiver ASAP</div>
+          <a class="note-link" href="http://hipaa-submit.jotform.com/221114307527143" target="_blank" rel="noopener">hipaa-submit.jotform.com/221114307527143</a>
+          <p>Climbing is Sunday 4/12, tentatively the route <strong>"Rewritten"</strong> in Eldorado Canyon — a 6-pitch, all-day climb. No experience required, but know this will be strenuous and potentially scary. Think <em>"adventure"</em>, not <em>"chill day out"</em>. Look up the route on YouTube to get a sense for what's involved.</p>
+          <p>The guided day is covered by Tim for the full group. Please plan to bring <strong>~$20–$60 each</strong> to tip the guides — bringing this many people up a long route is quite the challenge.</p>
+        </div>
+      </div>
     </div>
 
     <!-- Editable table: Restaurants -->
@@ -1280,16 +1450,16 @@ let days = [
       {
         "id": 111,
         "time": "Morning",
-        "name": "[TENTATIVE] Multi-Pitch Rock Climb in Eldorado Canyon",
+        "name": "Multi-Pitch Rock Climb in Eldorado Canyon",
         "note": "Confirm attendees, will be roughly 8am-4pm",
         "tag": "outdoor"
       },
       {
         "id": 112,
         "time": "Afternoon",
-        "name": "[TENTATIVE] Recovery & Balls Icing",
+        "name": "Climbing Recovery & Balls Icing",
         "note": "We're old",
-        "tag": "casino"
+        "tag": "other"
       },
       {
         "id": 113,
@@ -1467,7 +1637,7 @@ let crew = [
     "id": 5,
     "name": "Sam",
     "role": "The Mayor of Newps",
-    "rsvp": "maybe"
+    "rsvp": "in"
   },
   {
     "id": 6,
@@ -1480,24 +1650,6 @@ let crew = [
     "name": "Nick",
     "role": "The Broski",
     "rsvp": "in"
-  },
-  {
-    "id": 8,
-    "name": "Max",
-    "role": "The Expectant",
-    "rsvp": "maybe"
-  },
-  {
-    "id": 9,
-    "name": "Phil",
-    "role": "The Belizer",
-    "rsvp": "maybe"
-  },
-  {
-    "id": 10,
-    "name": "Martin",
-    "role": "The Paternity Leave",
-    "rsvp": "maybe"
   }
 ];
 
@@ -1957,13 +2109,6 @@ function saveTables() { localStorage.setItem('bp_noteTables', JSON.stringify(not
 //  NOTES TEXT PERSISTENCE
 // ═══════════════════════════════════════════════════════════════
 
-function setupNotes() {
-  document.querySelectorAll('.note-card textarea').forEach((ta, i) => {
-    const key = `bpNote_${i}`;
-    ta.value = localStorage.getItem(key) || '';
-    ta.addEventListener('input', () => localStorage.setItem(key, ta.value));
-  });
-}
 
 // ═══════════════════════════════════════════════════════════════
 //  PERSISTENCE
@@ -2027,7 +2172,6 @@ renderSchedule();
 renderActivities();
 renderCrew();
 renderNoteTables();
-setupNotes();
 </script>
 
 </body>
